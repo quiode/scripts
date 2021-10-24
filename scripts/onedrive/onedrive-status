@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ -z "$1" ];
+then
+    journalctl --user-unit=onedrive -f
+elif [ "$1" = "school" ]
+then
+    journalctl --user-unit=onedrive-school -f
+elif [ "$1" = "--help" ]
+then
+    echo "Usage: onedrive-status [school|--help]"
+    echo "  school: Show the school version of onedrive-status"
+    echo "  --help: Show this help"
+else
+    echo -e "\e[31mWrong arguments!\e[0m"
+    echo "Usage: onedrive-status [school|--help]"
+    exit 1
+fi
