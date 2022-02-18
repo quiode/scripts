@@ -9,9 +9,13 @@ if [ "$EUID" -ne 0 ]; then
     exit
 fi
 # needs one argument -> the backup destination
-if [ $# -ne 1 ] && [ ! -d "$1" ]; then
+if [ $# -ne 1 ]; then
     echo "Usage: # backup.sh <backup_directory>"
     exit
+fi
+
+if [ ! -d "$1" ]; then
+    echo "$1 is not a directory"
 fi
 
 rm -r "$1"
