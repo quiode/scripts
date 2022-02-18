@@ -21,4 +21,4 @@ fi
 
 rm -r "$1"
 mkdir "$1"
-rsync -aAXHSn --info=progress2 --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / "$1"
+rsync -aAXHS --info=progress2 --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / "$1"
