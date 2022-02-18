@@ -16,6 +16,7 @@ fi
 
 if [ ! -d "$1" ]; then
     echo "$1 is not a directory"
+    exit
 fi
 
 rm -r "$1"
