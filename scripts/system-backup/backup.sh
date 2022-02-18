@@ -9,11 +9,11 @@ if [ "$EUID" -ne 0 ]; then
     exit
 fi
 # needs one argument -> the backup destination
-if [ $# -ne 1 ] && ! [ -d "$0" ]; then
+if [ $# -ne 1 ] && ! [ -d "$1" ]; then
     echo "Usage: # backup.sh <backup_directory>"
     exit
 fi
 
-rm -r "$0"
-mkdir "$0"
-rsync -aAXHSn --info=progress2 --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / "$0"
+rm -r "$1"
+mkdir "$1"
+rsync -aAXHSn --info=progress2 --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / "$1"
