@@ -10,7 +10,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 # needs one argument -> the backup destination
 if [ $# -ne 1 ] && ! [ -d "$0" ]; then
-    echo "Usage: <backup_directory>"
+    echo "Usage: # backup.sh <backup_directory>"
     exit
 fi
 
