@@ -9,7 +9,7 @@ if [ "$EUID" -ne 0 ]; then
     exit
 fi
 # needs one argument -> the backup destination
-if [ $# -ne 1 ] && [ ! -d "$0" ]; then
+if [ $# -ne 1 ] && ! [ -d "$0" ]; then
     echo "Usage: <backup_directory>"
     exit
 fi
